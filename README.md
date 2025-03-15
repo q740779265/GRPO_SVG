@@ -45,3 +45,10 @@ max_response_length   # 最大回答长度
 ```
 .entrance.sh
 ```
+## 启动Tensorboard
+启动训练后，系统会在verl-main/outputs/tensorboard文件夹下新建一个log文件夹，假如这个文件夹叫yyy
+
+接着新建一个终端，输入以下命令，即可启动Tensorboard：
+```
+tensorboard --logdir xxx/verl-main/outputs/tensorboard/yyy
+```
