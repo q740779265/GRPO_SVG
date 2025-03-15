@@ -31,7 +31,9 @@ n # 每个问题rollout个数
 max_response_length   # 最大回答长度
 ```
 ## 修改reward模型路径
-因为存在两个reward model所以我们并没有把reward集成在verl框架中
+因为存在两个reward model所以我们并没有把reward集成在verl框架中，而是写成了API形式，供verl调用，API文件在verl-main/svg_custom/custom.py
+
+打开这个文件，设置一下VQA和美学评价器（CLIP）路径
 
 ## 启动训练
 先把verl-main这个路径手动添加到系统搜索路径中
