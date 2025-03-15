@@ -42,6 +42,8 @@ max_response_length   # 最大回答长度
 # new_path = 'xxx/xxx/verl-main'(verl-main的绝对路径复制进去)
 # sys.path.append(new_path)
 ```
+如果显卡支持P2P，进去根目录下的entrance.sh把P2P环境变量设置删了
+
 然后cd到verl-main，在终端输入下面命令就可以开始训练了：
 ```
 .entrance.sh
