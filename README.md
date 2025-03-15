@@ -4,7 +4,7 @@
 conda install --yes --file requirements.txt
 ```
 可能安装cuda时有坑，注意一下对应pytorch的2.4.0版本
-## 参数传入
+## 修改配置文件
 GRPO的训练参数文件放在verl-main/verl/trainer/config/grpo_trainer.yaml中，打开它
 ### 修改训练集路径
 由于我路径传入都是我这边绝对路径，所以重新部署时得改一下，数据集已经包含在文件夹中了
@@ -20,7 +20,6 @@ val_files: xxx/verl-main/examples/datasets/svg/train.parquet
 model:
  path: xxx/qwen2.5-coder-7b
 ```
-
 ### 调整超参数
 下面解释一些超参数，reward那边的超参数最好不动
 ```
@@ -31,6 +30,8 @@ total_epochs   # 训练轮次
 n # 每个问题rollout个数
 max_response_length   # 最大回答长度
 ```
+## 修改reward模型路径
+因为存在两个reward model所以我们并没有把reward集成在verl框架中
 
 ## 启动训练
 先把verl-main这个路径手动添加到系统搜索路径中
