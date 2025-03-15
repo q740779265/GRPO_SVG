@@ -5,17 +5,32 @@
 ```
 可能安装cuda时有坑，注意一下对应pytorch的2.4.0版本
 ## 参数传入
-GRPO的训练参数文件放在verl-main/verl/trainer/config/grpo_trainer.yaml中
+GRPO的训练参数文件放在verl-main/verl/trainer/config/grpo_trainer.yaml中，打开它
 ### 修改训练集路径
 由于我路径传入都是我这边绝对路径，所以重新部署时得改一下，数据集已经包含在文件夹中了
 
 根据路径verl-main/examples/datasets/svg/train.parquet找到train.parquet文件，复制绝对路径，并在yaml文件中修改以下两个参数，val_files是没用的，但因为不能空所以直接填的训练集路径
 ```
-# xxx改成你那边的绝对路径
 train_files: xxx/verl-main/examples/datasets/svg/train.parquet
 val_files: xxx/verl-main/examples/datasets/svg/train.parquet
 ```
+### 修改actor模型路径
+找到actor_rollout_ref里的path，改成你那边的路径
+```
+  model:
+    path: xxx/qwen2.5-coder-7b
+```
 
+### 调整超参数
+下面解释一些超参数，reward那边的超参数最好不动
+```
+train_batch_size   # 批次大小
+enable_gradient_checkpointing   # 梯度检查点
+save_freq   # 保存步长
+total_epochs   # 训练轮次
+n # 每个问题rollout个数
+max_response_length   # 最大回答长度
+```
 
 ## 启动训练
 先把verl-main这个路径手动添加到系统搜索路径中
