@@ -14,5 +14,5 @@
 ```
 然后cd到verl-main，在终端输入下面命令就可以开始训练了：
 ```
-.run
+.entrance.sh
 ```
