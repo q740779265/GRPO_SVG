@@ -1,7 +1,7 @@
 # 使用说明
 ## 环境设置
 ```
- conda install --yes --file requirements.txt
+conda install --yes --file requirements.txt
 ```
 可能安装cuda时有坑，注意一下对应pytorch的2.4.0版本
 ## 参数传入
