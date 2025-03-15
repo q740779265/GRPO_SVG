@@ -17,8 +17,8 @@ val_files: xxx/verl-main/examples/datasets/svg/train.parquet
 ### 修改actor模型路径
 找到actor_rollout_ref里的path，改成你那边的路径
 ```
-  model:
-    path: xxx/qwen2.5-coder-7b
+model:
+ path: xxx/qwen2.5-coder-7b
 ```
 
 ### 调整超参数
