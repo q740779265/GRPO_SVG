@@ -33,12 +33,11 @@ max_response_length   # 最大回答长度
 ## 修改reward模型路径
 因为存在两个reward model所以我们并没有把reward集成在verl框架中，而是写成了API形式，供verl调用，API文件在verl-main/svg_custom/custom.py
 
-打开这个文件，设置一下VQAEvaluator里的model path和AestheticEvaluator中的model path路径
-
-VQAEvaluator使用的是：paligemma2-10b-mix-448
-
-AestheticEvaluator中只用改model_path参数，使用的权重是github开源的：sac+logos+ava1-l14-linearMSE.pth
-
+打开这个文件，设置一下VQAEvaluator里的model_path和AestheticEvaluator中的model_path路径
+```
+VQAEvaluator使用的模型权重是：paligemma2-10b-mix-448
+AestheticEvaluator使用的模型权重是github开源的：sac+logos+ava1-l14-linearMSE.pth
+```
 ## 启动训练
 先把verl-main这个路径手动添加到系统搜索路径中
 
