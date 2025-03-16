@@ -8,14 +8,9 @@ export CUDA_VISIBLE_DEVICES=0,1,4,5,6,7
 
 python3 -m verl.trainer.main_ppo \
     config_path=./verl/trainer/config/grpo_trainer.yaml \
-    data.train_files=/home/wxf/lzq/twq/verl-main/examples/datasets/svg/train.parquet \
-    data.val_files=/home/wxf/lzq/twq/verl-main/examples/datasets/svg/train.parquet\
-    data.max_response_length=4096 \
-    actor_rollout_ref.model.path=/home/wxf/lzq/data/model/qwen/qwen2.5-coder-7b \
-    reward_model.model.path=/home/wxf/lzq/data/model/paligemma2-10b-mix-448/models--google--paligemma2-10b-mix-448/snapshots/b26d16fb4251090ba4a4aa5af9fca1f8248ed5b6\
     trainer.project_name='verl_grpo_SVG' \
     trainer.experiment_name='qwen25_05' \
-    trainer.n_gpus_per_node=4 \
+
 
 # python3 -m verl.trainer.main_ppo \
 #     algorithm.adv_estimator=grpo \
